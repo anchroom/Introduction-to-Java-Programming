@@ -1,2 +1,3 @@
 # Introduction-to-Java-Programming
-Only for exercise, Eighth Edition.
+##License or copyright information.
+Only for exercise, from <Introduction-to-Java-Programming> Eighth Edition.
