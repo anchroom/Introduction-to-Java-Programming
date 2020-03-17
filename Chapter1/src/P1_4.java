@@ -1,6 +1,9 @@
 public class P1_4 {
     public static void main(String[] args){
-        System.out.printf("%-15s%n%-15s%n%-15s%n", "dadk", "dafadfa", "dafadfa");
-        //for (int a = 0; a<5; a++) System.out.format("%s5 %s5 %s5", a,a*a,a*a*a);
+
+        //循环格式输出
+        for (int a = 0; a<5; a++) System.out.format("%-5s%-5s%-5s%n", a,a*a,a*a*a);
+        for (int a = 0; a<5; a++) System.out.printf("%-5s%-5s%-5s%n", 5,25,a);
+
     }
 }
