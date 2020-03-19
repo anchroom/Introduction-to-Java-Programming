@@ -15,7 +15,7 @@ public class Formatlearning {
         //
         System.out.println("Hallo,Leo!");
         System.out.printf("%15s","Hallo,Leo!");
-        System.out.printf("%-15s","Hallo,Leo!");
+        System.out.printf("%15s","Hallo,Leo!");
 
     }
 }
