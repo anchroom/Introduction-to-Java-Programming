@@ -12,10 +12,14 @@ public class Formatlearning {
         //循环格式输出
         for (int a = 0; a<5; a++) System.out.format("%-5s%-5s%-5s%n", 5,25,a);
         for (int a = 0; a<5; a++) System.out.printf("%-5s%-5s%-5s%n", 5,25,a);
-        //
+        //%n是换行
         System.out.println("Hallo,Leo!");
         System.out.printf("%15s","Hallo,Leo!");
-        System.out.printf("%15s","Hallo,Leo!");
+        System.out.printf("%15s%n","Hallo,Leo!");
+
+        //输出小数,是自动四舍五入,小数点前的位数没有限制作用
+        System.out.printf("%3.2f%n", 22.6666666);
+        System.out.printf("%3.2f%n", 22222.6666666);
 
     }
 }
