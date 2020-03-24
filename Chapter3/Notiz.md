@@ -18,6 +18,19 @@ if (Math.abs(x-0.5) < EPSILON)
     System.out.println(x + "is approximately 0.5");
 ```
 
+## 2.产生随机数
+```java
+Math.random()产生一个随机的0-1间的数字
+//要得到一个0-10间的随机整数
+int number = (int) (Math.random()*10);
+```
+
+## 3.幂运算
+```java
+//平方根运算
+Math.pow(number,0.5);
+```
+
 ## 复习题
 
 ### 3.3
