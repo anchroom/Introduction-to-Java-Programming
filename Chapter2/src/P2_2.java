@@ -1,5 +1,3 @@
-import javafx.scene.input.PickResult;
-
 import java.util.Scanner;
 
 public class P2_2 {
