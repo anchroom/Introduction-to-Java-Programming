@@ -31,6 +31,116 @@ int number = (int) (Math.random()*10);
 Math.pow(number,0.5);
 ```
 
+## 4.Java变量的初始化和赋值
+其它都可以在初始化时不赋值，但String 不行，虽然会指向null，但作为一个对象，没有初始值会容易出问题。
+
+Java语言里，new表达式总体负责两个动作：一是分配对象空间并对其做默认初始化。默认初始化会将对象的所有成员字段设到其类型对应的默认值（零值）。
+二是初始化对象。其中构造器只负责第2点，第1点是包含在new表达式里的语义。
+
+```java
+package variable.initialize;
+public class Test {
+    int intAge;
+    short shortAge;
+    long longAge;
+    float floatAge;
+    double doubleAge;
+    char charC;
+    boolean booleanFlg;
+    byte byteB;
+    String string;
+
+    private void print() {
+        System.out.println("The default value for int is " + intAge);
+        System.out.println("The default value for short is " + shortAge);
+        System.out.println("The default value for long is " + longAge);
+        System.out.println("The default value for float is " + floatAge);
+        System.out.println("The default value for double is " + doubleAge);
+        System.out.println("The default value for char is " + charC+((int)charC));
+        System.out.println("The default value for boolean is " + booleanFlg);
+        System.out.println("The default value for bayte is " + byteB);
+        System.out.println("The default value for String is " + string);
+
+    }
+
+    public static void main(String[] args) {
+        new Test().print();
+    }
+}
+
+
+// result output
+The default value for int is 0
+The default value for short is 0
+The default value for long is 0
+The default value for float is 0.0
+The default value for double is 0.0
+The default value for char is 
+The default value for boolean is false
+The default value for bayte is 0
+The default value for String is null
+```
+
+Java 先初始化静态比变量和静态块，然后在初始化非静态变量和块，这些都在构造方法调用前调用。如果多个相同类型（此处指的是静态和非静态）的变量或块，则按照顺序来初始化。
+                                               对于静态的只在class第一次加载的时候初始化，并且初始化一次
+```java
+package variable.initialize;
+
+class Dog {
+    int age;
+
+    Dog(int age) {
+        this.age = age;
+        System.out.println("This is the constructor of Dog class, with age " + age);
+    }
+
+}
+
+public class Test2 {
+    Dog dog1 = new Dog(2);
+    {
+        System.out.println("I am a nomal block.");
+    }
+    static Dog dog2 = new Dog(3);
+    static{
+        System.out.println("I am a static block.");
+    }
+
+    private Test2() {
+        System.out.println("This is the constructor of Test class.");
+    }
+
+    public static void main(String[] args) {
+        new Test2();
+    }
+}
+
+
+//output
+This is the constructor of Dog class, with age 3
+I am a static block.
+This is the constructor of Dog class, with age 2
+I am a nomal block.
+This is the constructor of Test class.
+```
+所有变量都必须初始化，只不过有的不用直接赋值，会赋默认值，所以从外面看起来，全局变量不一定赋值，局部变量必须赋值；
+```java
+public class Demo {
+    int m;
+    public static void main(String[] args) {
+        Demo demo = new Demo();
+        System.out.println(demo.m); //输出0
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        int m;
+        System.out.println(m); //报未初始化错误
+    }
+}
+```
+
 ## 复习题
 
 ### 3.3
