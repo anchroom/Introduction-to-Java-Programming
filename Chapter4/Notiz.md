@@ -26,4 +26,30 @@
 12. lastIndexOf()
 13. parse...() 从字符串向其它类型的转化
 
+## 关于二进制格式的相关问题
+
+### 关于进制数赋值的问题
+默认情况下，整型直接量是一个十进制整数。要表示一个二进制整数直接量，使用
+Ob 或者0B ( 零B) 开头；表示一个八进制整數直接量，就用0 ( 零）开头，而要表示一个
+十六进制整数直接量，就用Ox 或0X ( 零x) 开头。例如，
+```java
+byte value = (byte) 24;
+
+System.out.println(OB1111); // Displays 15
+System.out,print1n(07777); // Displays 4095
+System.out.println(OXFFFF); // Displays 65535
+
+```
+
+### byte to int
+
+
+### byte 的输出问题
+二进制输出不是以数的形式，而是以字符串的形式
+```java
+byte ivalue = (byte)24;
+String binaryString = Integer.toBinaryString(ivalue);
+System.out.println("binaryString = " + binaryString);
+```
+
 
