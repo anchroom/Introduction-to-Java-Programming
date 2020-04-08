@@ -25,6 +25,10 @@
 11. indexOf(ch,fromIndex)
 12. lastIndexOf()
 13. parse...() 从字符串向其它类型的转化
+14. substring(beginIndex) 特定位置 beginlndex 的字符开始到字符串的结尾，但并不包含最后一位。
+15. substring(beginIndex, endIndex) 返回该字符串的子串，从特定位置 beginlndex 的字符开始到下标为
+                                    endlndex -l
+                                    的字符，如图 4-2 所示。注意，位于 endlndex 位置的字符不属 于该子字符串的一部分
 
 ## 关于二进制格式的相关问题
 
