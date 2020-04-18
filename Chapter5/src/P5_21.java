@@ -21,13 +21,10 @@ public class P5_21 {
         System.out.printf("%-17s%-17s%-17s%n", "Interest Rate", "Monthly Payment", "Total Payment");
 
         for (rate = 0.05; rate <= 0.08; rate += STEP_RATE){
-            for (int i = 1; i <= numberOfYears; i++){
-                totalPayment = totalPayment * (1 + rate);
-            }
-            monthlyPayment = totalPayment / (numberOfYears * MONATS_OF_YEAR);
-            System.out.printf("%.3f%%                 %-16.2f %-16.2f%n", (rate * 100), monthlyPayment, totalPayment);
+                monthlyPayment = loanAmount * rate / (1 - 1 / Math.pow(1 + rate, numberOfYears * MONATS_OF_YEAR));
+                totalPayment = monthlyPayment * numberOfYears * MONATS_OF_YEAR;
+                System.out.printf("%.3f%%                 %-16.2f %-16.2f%n", (rate * 100), monthlyPayment, totalPayment);
         }
-
-
     }
 }
+
